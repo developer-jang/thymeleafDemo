@@ -1,0 +1,1 @@
+Thymeleaf - .html확장자 사용, 인코딩은 utf-8, Mime Type : text/html, 서버 cache : true
