@@ -1,1 +1,3 @@
 Thymeleaf - .html확장자 사용, 인코딩은 utf-8, Mime Type : text/html, 서버 cache : true
+
+DevTools는 컨트롤러의 소스 코드를 수정하면 자동으로 스프링 부트를 재시작해 준다.

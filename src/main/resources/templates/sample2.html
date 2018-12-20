@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>thymeleaf3</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+    </head>
+    <body>
+        <!--<h1>Thymeleaf Test Page</h1>-->
+        <h1 th:text="${memberVO}">Thymeleaf Test Page</h1>
+        <!-- th:text는 태그의 내용물로 문자열을 출력한다.-->
+        <div th:utext='${"<h3>" +  memberVO.mid + "</h3>"}'></div>
+        <!-- th:utext는 html 태그 자체로 노출이 가능하다. 대신 앞뒤로 감싸지는 것도 나오는 것 같음.-->
+    </body>
+</html>

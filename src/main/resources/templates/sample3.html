@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>thymeleaf3</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+    </head>
+    <body>
+
+    <table border="1">
+        <tr>
+            <td>MID</td>
+            <td>MNAME</td>
+            <td>REGDATE</td>
+        </tr>
+        <tr th:each="member : ${memberVOList}">
+            <td th:text="${member.mid}"> </td>
+            <td th:text="${member.mname}"> </td>
+            <td th:text="${#dates.format(member.regDate, 'yyyy-MM-dd')}"> </td>
+        </tr>
+    </table>
+
+
+    </body>
+</html>
