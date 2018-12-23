@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>thymeleaf3</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Thymeleaf Test Page</h1>
+        <h1 th:text="${now}"></h1>
+        <h2 th:text="${#dates.format(now,'yyyy-MM-dd')}"></h2>
+        <!--<div th:width="timeValue=${#dates.createToday()}">-->
+            <!--<p>[[${timeValue}}]]</p>-->
+        <!--</div>-->
+
+        <h1 th:text="${price}"></h1>
+
+        <h1 th:text="${title}"></h1>
+
+        <h1 th:text="${options}"></h1>
+    </body>
+</html>
+
+<!--
+Sun Dec 23 23:28:14 KST 2018
+There was an unexpected error (type=Internal Server Error, status=500).
+An error happened during template parsing (template: "class path resource [templates/sample7.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sample7.html]")
+
+error 발생,,,?why?
+
+-->
