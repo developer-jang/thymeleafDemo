@@ -1,31 +1,42 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
-    <head>
-        <title>thymeleaf3</title>
-        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
-    </head>
-    <body>
-        <h1>Thymeleaf Test Page</h1>
-        <h1 th:text="${now}"></h1>
-        <h2 th:text="${#dates.format(now,'yyyy-MM-dd')}"></h2>
-        <!--<div th:width="timeValue=${#dates.createToday()}">-->
-            <!--<p>[[${timeValue}}]]</p>-->
-        <!--</div>-->
+<head>
+    <title>thymeleaf3</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+</head>
+<body>
+    <h1 th:text="${now}"></h1>
 
-        <h1 th:text="${price}"></h1>
+    <h2 th:text="${#dates.format(now, 'yyyy-MM-dd')}"></h2>
+    <div th:with="timeValue=${#dates.createToday()}">
+        <p>[[${timeValue}]]</p>
+    </div>
 
-        <h1 th:text="${title}"></h1>
+    <h1 th:text="${price}"></h1>
+    <!--123456789-->
+    <h2 th:text="${#numbers.formatInteger(price,3,'COMMA')}"></h2>
+                                         <!--target, minDigit, thousandsPointType-->
+    <!--thousandsPointType : ‘POINT’, ‘COMMA’, ‘WHITESPACE’, ‘NONE’, ‘DEFAULT’ (by locale).-->
+    <!--123,456,789-->
+    <h2 th:text="${#numbers.formatInteger(price,3,'WHITESPACE')}"></h2>
 
-        <h1 th:text="${options}"></h1>
-    </body>
+    <h1 th:text="${title}"></h1>
+    <span th:utext="${#strings.replace(title,'s','<b>s</b>')}"></span>
+    <ul>
+        <li th:each="str:${#strings.listSplit(title, ' ')}">[[${str}]]</li>
+        <!--
+        <li>This</li>
+        <li>is</li>
+        <li>a</li>
+        <li>just</li>
+        <li>sample.</li>
+        -->
+    </ul>
+    <h1 th:text="${options}"></h1>
+</body>
 </html>
-
 <!--
-Sun Dec 23 23:28:14 KST 2018
-There was an unexpected error (type=Internal Server Error, status=500).
-An error happened during template parsing (template: "class path resource [templates/sample7.html]")
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sample7.html]")
-
-error 발생,,,?why?
-
+error : thymeleaf template: "class path resource
+why ? : org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "${timeValue}}" (template: "sample7" - line 22, col 30)
+아.. 원인은 삽질.. 오타.. 10라인 th:with인데 자동으로 완성되다보니 th:width로 됨...
 -->
