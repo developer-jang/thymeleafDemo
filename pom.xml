@@ -43,6 +43,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- Thymeleaf의 레이아웃 기능 추가를 위한 라이브러리 추가-->
+        <!-- https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect -->
+        <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <!-- 이를 사용하면 하나의 레이아웃을 작성하고, 여러 페이지에 재사용하여 적용 가능하다.-->
     </dependencies>
 
     <build>

@@ -24,11 +24,7 @@
     <span th:utext="${#strings.replace(title,'s','<b>s</b>')}"></span>
     <ul>
         <li th:each="str:${#strings.listSplit(title, ' ')}">[[${str}]]</li>
-        <!--
-          [[
-             ${str} // 구조유지
-          ]]
-        -->
+
         <!--
         <li>This</li>
         <li>is</li>

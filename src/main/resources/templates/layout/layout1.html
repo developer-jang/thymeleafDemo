@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+
+<body>
+    <!--Content body-->
+    <div layout:fragment="content">
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!--Custom javascript-->
+    <th:block layout:fragment="script"></th:block>
+    <!--아무런 태그가 없는 영역을 표시할 때 사용한다.-->
+    <script></script>
+
+    <!--
+    Content body, Custom javascript 표현 영역은 매번 페이지 제작 시 변경되는 영역이다.
+
+    -->
+
+</body>
+</html>

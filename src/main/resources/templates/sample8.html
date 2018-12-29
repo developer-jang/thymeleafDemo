@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
 </head>
 <body>
+
+    <div th:insert="~{fragments/header::header1}"></div>
     <ul>
         <li><a th:href="@{http://localhost:8080/sample1}">sample1</a> </li>
         <!-- 위에는 절대 경로.. 값이 고정되어야 한다는 단점 존재 -->
@@ -15,6 +17,6 @@
         <li><a th:href="@{/sample1(p1='aaa', p2='bbb')}">sample1</a></li>
         <!-- parameter add-->
     </ul>
-
+    <div th:insert="~{fragments/footer::footer1}"></div>
 </body>
 </html>
